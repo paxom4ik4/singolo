@@ -1,0 +1,248 @@
+*{
+    max-width: 1020px;
+    margin: 0 auto;
+}
+.portfolio__container{
+    height: 870px;
+}
+.portfolio{
+    height: 864px;
+    background-color: #2d303a;
+    position: relative;
+}
+h1{
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    left: 41px;
+    top: 60px;
+    font-size: 30px;
+    color: #666d89;
+    letter-spacing: 0.5px;
+}
+.p__text{
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    left: 41px;
+    top: 119px;
+    letter-spacing: 0.18px;
+    font-size: 17px;
+    color: #666d89;    
+}
+button{
+    border: 1px solid #666d89;
+    border-radius: 5px;
+    font-size: 11px;
+    
+    color: #666d89;
+    text-decoration: none;
+    background-color: #2d303a;
+    cursor: pointer;  
+}
+.buttons{
+    position: relative;
+}
+.button__all{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 22px;
+    width: 30px;
+    
+}
+.button__web-design{
+    letter-spacing: 0.25px;
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    height: 22px;
+    width: 78px;
+}
+.button__graphic-design{
+    position: absolute;
+    letter-spacing: 0.23px;
+    top: 0px;
+    left: 127px;
+    height: 22px;
+    width: 93px;
+}
+.button__artwork{
+    letter-spacing: 1.1px;
+    position: absolute;
+    top: 0px;
+    left: 230px;
+    height: 22px;
+    width: 57px;
+}
+button:hover{
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+.buttons{
+    position: absolute;
+    top: 155px;
+    left: 41px;
+}
+.images{
+    position: absolute;
+    top: 196px;
+    left: 41px;
+    max-height: 620px;
+}
+.image__line{
+    position: relative;
+}
+.first{
+    float:left;
+    width:25%;
+}
+.second{
+    float:left;
+    width:25%;
+}
+.third{
+    float:left;
+    width:25%;
+}
+.fourth{
+    float:left;
+    width:25%;
+}
+.img{
+    padding-right: 20px;
+}
+.img2{
+    padding-right: 20px;
+    padding-top: 15px;
+}
+.img3{
+    padding-right: 20px;
+    padding-top: 15px;   
+}
+.portfolio__line{
+    width: 100%;
+    height: 6px;
+    background-color: #323746;
+}
+.about_us{
+    height: 734px;
+    width: 100%;   
+}
+.about__main{
+    height: 728px;
+    background-color: #f2f2f2;
+    position: relative;
+}
+
+h2{
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    left: 41px;
+    top: 59px;
+    letter-spacing: 0.5px;
+    font-size: 30px;
+    color: #666d89;    
+}
+.about__text{
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    left: 41px;
+    top: 115px;
+    line-height: 1.7;
+    letter-spacing: 0.29px;
+    font-size: 17px;
+    color: #666d89;
+}
+.block{
+    position: absolute;
+    top: 218px;
+    left: 40px;
+}
+.inline div{
+    display: inline-block;
+    vertical-align: top;
+}
+.left{
+    display: inline-block;
+    width: 300px;
+    height: 450px;
+    position: relative;
+}
+.center{
+    display: inline-block;
+    width: 300px;
+    height: 450px;
+    padding-left: 16px;
+    padding-right: 17px;
+    position: relative;
+}
+.rigth{
+    display: inline-block;
+    max-width: 300px;
+    height: 450px;
+    position: relative;
+    
+}
+.image{
+    width: 300px;
+    height: 300px;
+}
+.block__h{
+    position: absolute;
+    top: 315px;
+    letter-spacing: 0.2px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    color: #666d89;
+}
+.block__text{
+    position: absolute;
+    top: 346px;
+    line-height: 1.95;
+    letter-spacing: 0.38px;
+    font-family: 'Lato', sans-serif;
+    color: #767e9e;
+    font-size: 11px;
+    max-width: 300px;    
+}
+.links1{
+    position: absolute;
+    top: 411px;
+    left: 1px;
+    display: inline-block;
+}
+.links2{
+    position: absolute;
+    top: 411px;
+    left: 16px;
+    display: inline-block;     
+}
+.links3{
+    position: absolute;
+    top: 411px;
+    left: 640px;
+    display: inline-block;  
+}
+.links1 img{
+    padding-right: 4px;
+    width: 32px;
+    height: 32px;
+}
+.links2 img{
+    padding-right: 4px;
+    width: 32px;
+    height: 32px;
+}
+.links3 img{
+    padding-right: 4px;
+    width: 32px;
+    height: 32px;
+}
+.links img:hover{
+    opacity: 0.7;
+}
+
+.about__line{
+    height: 6px;
+    width: 100%;
+    background-color: #ffffff;
+}
