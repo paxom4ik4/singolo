@@ -12,21 +12,37 @@
         <div class="header">
             <h1 class="header__text">Singolo<span class="colored">*</span></h1>  
             <nav class="header__nav">
-                <a href="#"><span class="header__item colored">Home<span class="dot">·</span></span></a>
-                <a href="#services"><span class="header__item m_item">Services <span class="dot">·</span></span></a>
-                <a href="#portfolio"><span class="header__item m_item">Portfolio<span class="dot">·</span></span></a>
-                <a href="#about"><span class="header__item m_item">About<span class="dot">·</span></span></a>
-                <a href="#contact"><span class="header__item m_item">Contact</span></a>  
+                <a href="#" id="h1" class="colored"><span class="header__item">Home<span class="dot">·</span></span></a>
+                <a href="#services" id="h2"><span class="header__item m_item">Services <span class="dot">·</span></span></a>
+                <a href="#portfolio" id="h3"><span class="header__item m_item">Portfolio<span class="dot">·</span></span></a>
+                <a href="#about" id="h4"><span class="header__item m_item">About<span class="dot">·</span></span></a>
+                <a href="#contact" id="h5"><span class="header__item m_item">Contact</span></a>  
             </nav>
         </div>
         <div class="header__line"></div>
     </header> 
     <section class="slider">
         <div class="slider__main">
-            <a href="#"><img src="assets/chev.png" alt="" class="chev"></a>
-            <img src="assets/iPhone Vertical.png" alt="" class="img1-1">
-            <img src="assets/iPhone Horizontal.png" alt="" class="img2-1">
-            <a href="#"><img src="assets/chev2.png" alt="" class="chev2"></a>
+            <div class="slide slide1">
+                <div class="phone phone1_shadow phone1">
+                    <div class="phone1_background"></div>
+                </div>
+                <div class="phone phone2_shadow phone2">
+                    <div class="phone2_background"></div>
+                </div>    
+            </div>
+            <div class="slide2 slide slide_hide">
+                <div class="phone leftPhone">
+                </div>
+                <div class="phone rightPhone">
+                </div>
+                <div class="phone centeredPhone">
+                    <div class="phoneCenter"></div>
+                </div>
+            </div>
+
+            <a href="#" ><img src="assets/chev.png" alt="" class="chev" id="chev"></a>
+            <a href="#" ><img src="assets/chev2.png" alt="" class="chev2" id="chev2"></a>
         </div>
         <div class="slider__line"></div>
     </section>      
@@ -82,30 +98,26 @@
             <h1 class="portfolio__text">Portfolio</h1>
             <p class="p__text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
             <div class="buttons">
-                <button class="button__all">All</button>
+                <button class="button__all chosen">All</button>
                 <button class="button__web-design">Web Design</button>
                 <button class="button__graphic-design">Graphic Design</button>
                 <button class="button__artwork">Artwork</button>
             </div>
             <div class="images">
-                <div class="image__line">
-                    <div class="first"><img src="assets/img1.png" alt="img1" class="img"></div>
-                    <div class="second"><img src="assets/img2.png" alt="img2" class="img"></div>
-                    <div class="third"><img src="assets/img3.png" alt="img3" class="img"></div>
-                    <div class="fourth"><img src="assets/img4.png" alt="img4" class="img"></div>
-                </div>
-                <div class="image__line">
-                    <div class="first"><img src="assets/img5.png" alt="img5" class="img2"></div>
-                    <div class="second"><img src="assets/img6.png" alt="img6" class="img2"></div>
-                    <div class="third"><img src="assets/img7.png" alt="img7" class="img2"></div>
-                    <div class="fourth"><img src="assets/img8.png" alt="img8" class="img2"></div>
-                </div>
-                <div class="image__line">
-                    <div class="first"><img src="assets/img9.png" alt="img9" class="img3"></div>
-                    <div class="second"><img src="assets/img10.png" alt="img10" class="img3"></div>
-                    <div class="third"><img src="assets/img11.png" alt="img11" class="img3"></div>
-                    <div class="fourth"><img src="assets/img12.png" alt="img12" class="img3"></div>
-                </div>
+                <div class="first main"><img src="assets/img1.png" alt="img1" class="img"></div>
+                <div class="second main"><img src="assets/img2.png" alt="img2" class="img"></div>
+                <div class="third main"><img src="assets/img3.png" alt="img3" class="img"></div>
+                <div class="fourth main"><img src="assets/img4.png" alt="img4" class="img"></div>
+
+                <div class="first main"><img src="assets/img5.png" alt="img5" class="img2"></div>
+                <div class="second main"><img src="assets/img6.png" alt="img6" class="img2"></div>
+                <div class="third main"><img src="assets/img7.png" alt="img7" class="img2"></div>
+                <div class="fourth main"><img src="assets/img8.png" alt="img8" class="img2"></div>
+            
+                <div class="first main"><img src="assets/img9.png" alt="img9" class="img3"></div>
+                <div class="second main"><img src="assets/img10.png" alt="img10" class="img3"></div>
+                <div class="third main"><img src="assets/img11.png" alt="img11" class="img3"></div>
+                <div class="fourth main"><img src="assets/img12.png" alt="img12" class="img3"></div>
             </div>
         </div>
         <div class="portfolio__line"></div>
@@ -157,11 +169,11 @@
             <h2 class="h__text">Get a Quote</h2>
             <p class="qoute__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="contacts">
-                <form class="contacts__form" action="#" method="post">
-                    <input class="contacts__field" type="text" name="name" placeholder="Name (Required)" required>
-                    <input class="contacts__field" type="email" name="email" placeholder="Email (Required)" required>
-                    <input class="contacts__field" type="text" name="subject" placeholder="Subject">
-                    <textarea class="contacts__field contacts__textarea" name="description" placeholder="Describe your project in detail..."></textarea>
+                <form class="contacts__form" action="#" method="post" id="form">
+                    <input class="contacts__field" type="text" name="name" placeholder="Name (Required)" id="name" required>
+                    <input class="contacts__field" type="email" name="email" placeholder="Email (Required)" id="email" required>
+                    <input class="contacts__field" type="text" name="subject" placeholder="Subject" id="subject">
+                    <textarea class="contacts__field contacts__textarea" name="description" placeholder="Describe your project in detail..." id="text"></textarea>
                     <button type="submit" class="submit__button">Submit</button> 
                 </form>
                 <div class="contact__info">
@@ -196,5 +208,6 @@
             <a href="#"><img src="assets/linkedin3.png" alt="linkedIn"></a>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
