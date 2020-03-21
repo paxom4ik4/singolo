@@ -7,12 +7,27 @@ a{
     text-decoration: none;
     color: #ffffff;
 }
-
+header{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
 .header{
+    position: relative;
     width: 100%;
     height: 89px;
     background-color: #2d303a;
     display: inline-block;
+    transition: 0.1s;
+}
+.header__small{
+    position: relative;
+    width: 100%;
+    height: 52px;
+    background-color: #2d303a;
+    display: inline-block;
+    transition: 0.2s;  
+    opacity: 0.8;
 }
 .header__text{
     display: inline-block;
@@ -22,7 +37,47 @@ a{
     text-transform: uppercase;
     color: #ffffff;
     line-height: 89px;
+    transition: 0.1s;
 }
+.header__text-small{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin-left: 40px;  
+    font-weight: 100;
+    font-size: 24.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 52px;
+    transition: 0.2s;
+    
+}
+.header__nav{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 610px;
+    font-weight: 100;
+    font-size: 24.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 89px;
+    transition: 0.1s; 
+}
+.header__nav-small{
+    position: absolute;
+    display: inline-block;
+    top: -20px;
+    left: 610px;
+    font-weight: 100;
+    font-size: 24.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 52px;
+    transition: 0.1s;
+}
+
 .header__line{
     width: 100%;
     height: 6px;
@@ -31,13 +86,8 @@ a{
 .colored{
     color: #c9605c;
 }
-.header__nav{
-    width: 400px;
-    position: relative;
-    left: 449px;
-    display: inline-block;    
-    color: #ffffff;
-    
+.header__item_active{
+    color: #c9605c; 
 }
 .header__item{
     line-height: 89px;   
@@ -57,6 +107,7 @@ a{
     margin-left: 24px;
 }
 .slider{
+    padding-top: 95px;
     width: 100%;
     height: 600px;
     position: relative; 
@@ -94,6 +145,7 @@ a{
     height: 100%;
     background: url(assets/iphone.png) 0 0 no-repeat; 
     transform: scale(-1, 1);
+    transition: 0.4s;
 }
 .phone1_background{
     content: "";
@@ -103,6 +155,7 @@ a{
     width: 188px;
     height: 333px;
     background: url(assets/back1.png) -14px -135px no-repeat; 
+    transition: 0.4s;
 }
 .phone2_background{
     content: "";
@@ -113,6 +166,7 @@ a{
     height: 189px;
     background: url(assets/back2.png) -124px -118px no-repeat; 
     transform: rotate(90deg) scale(-1, 1);
+    transition: 0.4s;
 }
 
 .slide1{
@@ -135,7 +189,8 @@ a{
     padding: 0 100px;
     height: 594px;
     background-color: #648BF0;
-    transition: all ease 1s;
+    transition: 0.5s;
+    
 }
 
 .slide2 > .phone {
@@ -847,6 +902,7 @@ a{
 }
 
 .modal_hide{
+    transition: 0.3s;
     z-index: 100;
     opacity: 1;
 }
