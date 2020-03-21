@@ -1,4 +1,3 @@
-
 // Подсветка элементов Header
 let h1 = document.getElementById("h1");
 let h2 = document.getElementById("h2");
@@ -7,39 +6,109 @@ let h4 = document.getElementById("h4");
 let h5 = document.getElementById("h5");
 
 h1.onclick = function(event){
-    h1.classList.add("colored")
-    h2.classList.remove("colored")
-    h3.classList.remove("colored")
-    h4.classList.remove("colored")
-    h5.classList.remove("colored")
+    h1.classList.add("header__item_active")
+    h2.classList.remove("header__item_active")
+    h3.classList.remove("header__item_active")
+    h4.classList.remove("header__item_active")
+    h5.classList.remove("header__item_active")
 }
 h2.onclick = function(event){
-    h1.classList.remove("colored")
-    h2.classList.add("colored")
-    h3.classList.remove("colored")
-    h4.classList.remove("colored")
-    h5.classList.remove("colored")
+    h1.classList.remove("header__item_active")
+    h2.classList.add("header__item_active")
+    h3.classList.remove("header__item_active")
+    h4.classList.remove("header__item_active")
+    h5.classList.remove("header__item_active")
 }
 h3.onclick = function(event){
-    h1.classList.remove("colored")
-    h2.classList.remove("colored")
-    h3.classList.add("colored")
-    h4.classList.remove("colored")
-    h5.classList.remove("colored")
+    h1.classList.remove("header__item_active")
+    h2.classList.remove("header__item_active")
+    h3.classList.add("header__item_active")
+    h4.classList.remove("header__item_active")
+    h5.classList.remove("header__item_active")
 }
 h4.onclick = function(event){
-    h1.classList.remove("colored")
-    h2.classList.remove("colored")
-    h3.classList.remove("colored")
-    h4.classList.add("colored")
-    h5.classList.remove("colored")
+    h1.classList.remove("header__item_active")
+    h2.classList.remove("header__item_active")
+    h3.classList.remove("header__item_active")
+    h4.classList.add("header__item_active")
+    h5.classList.remove("header__item_active")
 }
 h5.onclick = function(event){
-    h1.classList.remove("colored")
-    h2.classList.remove ("colored")
-    h3.classList.remove("colored")
-    h4.classList.remove("colored")
-    h5.classList.add("colored")
+    h1.classList.remove("header__item_active")
+    h2.classList.remove ("header__item_active")
+    h3.classList.remove("header__item_active")
+    h4.classList.remove("header__item_active")
+    h5.classList.add("header__item_active")
+}
+
+// Подсветка текущего раздела
+
+// Стиль
+
+// const H1 = document.querySelector("h1")
+// const NAV = document.querySelector(".header__nav")
+
+// function onChangeHeader() {
+//   if (window.pageYOffset > 10) {
+//     H1.classList.add("header__text-small")
+//     NAV.classList.add("header__nav-small")
+//   } else {
+//     H1.classList.remove("header__text-small")
+//     NAV.classList.remove("header__nav-small")
+//   }
+// }
+
+const header = document.getElementById("header"),
+headerText = document.querySelector(".header__text"),
+headerNav = document.querySelector(".header__nav"),
+headerLine = document.querySelector(".header__line");
+
+window.addEventListener("scroll", changeHeader)
+    
+function changeHeader(){
+  if(window.pageYOffset > 100){
+    header.classList.add("header__small")
+    headerText.classList.add("header__text-small")
+    headerNav.classList.add("header__nav-small")
+    headerLine.classList.remove("header__line")
+    
+  }
+  else{
+    header.classList.remove("header__small")
+    headerText.classList.remove("header__text-small")
+    headerNav.classList.remove("header__nav-small")
+    headerLine.classList.add("header__line")  
+  }
+}
+
+window.addEventListener("scroll", changeLinks)
+
+function changeLinks(){
+
+  const headerSmallHeight = 52,
+  servicesPos = document.getElementById("services").offsetTop - headerSmallHeight,
+  portfolioPos = document.getElementById("portfolio").offsetTop - headerSmallHeight,
+  aboutPos = document.getElementById("about").offsetTop - headerSmallHeight,
+  contactPos = document.getElementById("contact").offsetTop - headerSmallHeight;
+ 
+  let currentPos = window.pageYOffset;
+
+
+  if      (currentPos < servicesPos) changeLinksActive(0)
+  else if (currentPos >= servicesPos && currentPos < portfolioPos) changeLinksActive(1)
+  else if (currentPos >= portfolioPos && currentPos < aboutPos) changeLinksActive(2)
+  else if (currentPos >= aboutPos && currentPos < contactPos) changeLinksActive(3)
+  if (currentPos + 180 >= contactPos) changeLinksActive(4)
+}
+
+
+
+function changeLinksActive(n){
+  const links = headerNav.querySelectorAll(".header__item")
+  links.forEach(e =>{
+    e.classList.remove("header__item_active");
+  })
+  links[n].classList.add("header__item_active");
 }
 
 // Переключение Слайдера
@@ -67,14 +136,12 @@ function changeSlide(side) {
       changeSlideClass(slide, `slider-${side}`)
     } else changeSlideClass(slide, `slider-${side}-gone`)
   }
-  slider.classList.toggle("slider_two")
+  slider.classList.toggle("slide2")
 }
 
 function changeSlideClass(el, newClass) {
   el.classList.add(newClass)
-  setTimeout(() => {
-    el.classList.remove(newClass)
-  }, 300)
+  el.classList.remove(newClass)
 }
 
 // Включение \ выключение телефонов
@@ -266,92 +333,3 @@ function SubmitForm(e) {
   })
   newModal.open()
 }
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
