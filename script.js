@@ -136,6 +136,7 @@ function changeSlide(side) {
       changeSlideClass(slide, `slider-${side}`)
     } else changeSlideClass(slide, `slider-${side}-gone`)
   }
+  
 }
 
 function changeSlideClass(el, newClass) {
