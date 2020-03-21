@@ -136,7 +136,6 @@ function changeSlide(side) {
       changeSlideClass(slide, `slider-${side}`)
     } else changeSlideClass(slide, `slider-${side}-gone`)
   }
-  slider.classList.toggle("slide2")
 }
 
 function changeSlideClass(el, newClass) {
