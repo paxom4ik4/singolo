@@ -801,30 +801,23 @@ a{
 
 @media (min-width: 768px) and (max-width: 1020px){
     *{
+        max-width: 768px;
         justify-content: center;
         margin: auto;
     }
-    .header__text{
-        display: inline-block;
-        margin-left: 40px;  
-        font-weight: 100;
-        font-size: 32px;
-        text-transform: uppercase;
-        color: #ffffff;
-        line-height: 89px;
-        transition: 0.1s;
+    header{
+        position: fixed;
+        z-index: 100;
+        width: 100%;
     }
-    .header__nav{
-        position: absolute;
+    .header{
+        position: relative;
+        width: 100%;
+        height: 89px;
+        background-color: #2d303a;
         display: inline-block;
-        top: 0;
-        left: 610px;
-        font-weight: 100;
-        font-size: 35px;
-        text-transform: uppercase;
-        color: #ffffff;
-        line-height: 83px;
-        transition: 0.1s; 
+        transition: 0.1s;
+        border-bottom: 6px solid #323746;
     }
     .header__small{
         position: relative;
@@ -835,16 +828,14 @@ a{
         transition: 0.2s;  
         opacity: 0.8;
     }
-    .header__nav-small{
-        position: absolute;
+    .header__text{
         display: inline-block;
-        top: -15px;
-        left: 610px;
+        margin-left: 40px;  
         font-weight: 100;
         font-size: 24.5px;
         text-transform: uppercase;
         color: #ffffff;
-        line-height: 58px;
+        line-height: 89px;
         transition: 0.1s;
     }
     .header__text-small{
@@ -857,14 +848,38 @@ a{
         font-size: 24.5px;
         text-transform: uppercase;
         color: #ffffff;
-        line-height: 58px;
+        line-height: 52px;
         transition: 0.2s;
         
+    }
+    .header__nav{
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        left: 350px;
+        font-weight: 100;
+        font-size: 24.5px;
+        text-transform: uppercase;
+        color: #ffffff;
+        line-height: 89px;
+        transition: 0.1s; 
+    }
+    .header__nav-small{
+        position: absolute;
+        display: inline-block;
+        top: -20px;
+        left: 350px;
+        font-weight: 100;
+        font-size: 24.5px;
+        text-transform: uppercase;
+        color: #ffffff;
+        line-height: 52px;
+        transition: 0.1s;
     }
     /* slider */
     .slider{
         padding-top: 95px;
-        width: 1020px;
+        max-width: 768px;
         height: 444px;
         position: relative; 
         border-bottom: 6px solid #ea676b;
@@ -881,7 +896,7 @@ a{
     }
     .phone1{
         top: 40px;
-        left: 30px;
+        left: 0px;
         background-repeat: no-repeat;
         background-position: 0 0;
         background-image: url(assets/iphone.png), url(assets/phone_shadow.png);
@@ -899,7 +914,7 @@ a{
     .phone2::before{
         content: "";
         position: absolute;
-        top: -140px;
+        top: 84px;
         left: -52px;
         width: 180px;
         height: 364px;
@@ -919,7 +934,7 @@ a{
     .phone2_background{
         content: "";
         position: absolute;
-        top: -34px;
+        top: 190px;
         left: -95px;
         width: 265px;
         height: 156px;
@@ -928,13 +943,17 @@ a{
     }
     
     .slide1{
+        box-sizing: border-box;
         position: relative;
-        width: 768;
+        max-width: 768px;
         padding: 0 100px;
         height: 445px;
         left: 0;
         background-color: #f06c64;
         
+    }
+    .slide{
+        max-width: 768px;
     }
     .slide_hide{
         display: none; 
@@ -942,8 +961,9 @@ a{
     
     /*ВТОРОЙ СЛАЙД*/
     .slide2 {
+        box-sizing: border-box;
         left: 0;
-        width: 768;
+        max-width: 768px;
         padding: 0 100px;
         height: 445px;
         background-color: #648BF0;
@@ -983,15 +1003,15 @@ a{
     }
     
     .slide2 > .centeredPhone {
-        left: -44px;
+        left: -172px;
     }
     
     .slide2 > .rightPhone {
-        left: 274px;
+        left: 146px;
     }
     
     .slide2 > .leftPhone {
-        left: 187px;
+        left: 59px;
     }
     
     .slide2 > .centeredPhone .phoneCenter {
@@ -1023,13 +1043,13 @@ a{
     } 
 
     .services{
-        width: 1020px;
-        height: 720px;
+        width: 100%;
+        height: 784px;
         border-bottom: solid 6px #ffffff;
     }
     .services__text{
         width: 100%;
-        height: 220px;
+        height: 153px;
         position: relative;
         background-color: #f2f2f2;
     }
@@ -1039,61 +1059,61 @@ a{
         font-size: 30px;
         font-weight: 700;
         left: 40px;
-        top: 60px;    
+        top: 30px;    
     }
     .services__p{
-        width: 940px;
+        width: 90%;
         position: absolute;   
         color: #767e9e; 
-        font-size: 21px;
+        font-size: 18px;
         line-height: 30px;
         left: 40px;
-        top: 113px; 
+        top: 80px; 
         letter-spacing: 0.7px;
         text-align: justify;    
     }
     .services__items{
         box-sizing: border-box;
-        padding-top: 20px;
+        padding-top: 80px;
         width: 100%;
-        height: 500px;
+        height: 631px;
         background-color: #f2f2f2;
         display: grid;
         grid-template-columns: 50% 50%;
-        grid-column-gap: 100px;
-        grid-row-gap: 30px;
-        padding-left: 100px;
+        grid-column-gap: 10px;
+        grid-row-gap: 50px;
+        padding-left: 50px;
     }
     .design{
-        width: 50%;   
+        width: 55%;   
         margin: 0px;
         position: relative;  
     }
     
     .ideas{
-        width: 50%;    
+        width: 55%;    
         margin: 0px;
         position: relative;
     }
     .answer{
-        width: 55%; 
+        width: 65%; 
         margin: 0px;
         max-height: 62px;
         position: relative;
     }
     .phone_ser{
-        width: 55%; 
+        width: 65%; 
         margin: 0px;
         max-height: 62px;
         position: relative; 
     }
     .bubble{
-        width: 50%; 
+        width: 55%; 
         margin: 0px;
         position: relative;
     }
     .star{
-        width: 50%; 
+        width: 60%; 
         margin: 0px;
         position: relative;
     }
@@ -1103,7 +1123,7 @@ a{
     
     .items__text{  
         color: #767e9e;
-        font-size: 16px;
+        font-size: 14px;
         position: absolute;
         left: 80px;
         top: 28px;
@@ -1114,7 +1134,7 @@ a{
     .items__h{
         position: absolute;
         color: #666d89;
-        font-size: 18px;
+        font-size: 16px;
         left: 80px;
         top: -4px;
     }
@@ -1122,13 +1142,13 @@ a{
     /* portfoilio */
     .portfolio__container{
         height: 1100px;
-        width: 1020px;
+        width: 100%;
         position: relative;
         border-bottom: 6px solid #323746;
     }
     .portfolio{
         height: 1100px;
-        width: 1020px;
+        width: 100%;
         background-color: #2d303a;
         position: relative;
     }
@@ -1148,9 +1168,9 @@ a{
     .p__text{
         position: absolute;
         left: 41px;
-        top: 119px;
+        top: 110px;
         letter-spacing: 0.18px;
-        font-size: 26px;
+        font-size: 20px;
         color: #666d89;    
     }
     button{
@@ -1167,7 +1187,7 @@ a{
     }
     .button__all{
         position: absolute;
-        top: 40px;
+        top: 30px;
         left: 0px;
         height: 22px;
         width: 30px;
@@ -1175,7 +1195,7 @@ a{
     .button__web-design{
         letter-spacing: 0.25px;
         position: absolute;
-        top: 40px;
+        top: 30px;
         left: 40px;
         height: 22px;
         width: 78px;
@@ -1183,7 +1203,7 @@ a{
     .button__graphic-design{
         position: absolute;
         letter-spacing: 0.21px;
-        top: 40px;
+        top: 30px;
         left: 127px;
         height: 22px;
         width: 93px;
@@ -1191,7 +1211,7 @@ a{
     .button__artwork{
         letter-spacing: 1.1px;
         position: absolute;
-        top: 40px;
+        top: 30px;
         left: 230px;
         height: 22px;
         width: 57px;
@@ -1208,12 +1228,12 @@ a{
     .images{
         position: absolute;
         top: 236px;
-        left: 100px;
+        left: 5px;
         max-height: 620px;
         display: grid;
         grid-template-columns: 33% 33% 33%;
-        grid-column-gap: 30px;
-        grid-row-gap: 17px;
+        grid-column-gap: 12px;
+        grid-row-gap: 12px;
         padding-left: 38px;
         
     }
@@ -1234,10 +1254,11 @@ a{
     }
     .about_us{
         height: 728px;
-        width: 1020px;
+        max-width: 768px;
         border-bottom: 6px solid #ffffff;   
     }
     .about__main{
+        width: 100%;
         height: 728px;
         background-color: #f2f2f2;
         position: relative;
@@ -1251,8 +1272,8 @@ a{
         color: #666d89;    
     }
     .about__text{
+        width: 90%;
         position: absolute;
-        
         left: 41px;
         top: 115px;
         line-height: 1.7;
@@ -1262,36 +1283,36 @@ a{
     }
     .block{
         position: absolute;
-        top: 218px;
+        top: 248px;
         display: grid;
-        grid-template-columns: 300px 300px 300px;
+        grid-template-columns: 220px 220px 220px;
         grid-column-gap: 20px;
         grid-row-gap: 17px;
         padding-left: 40px;
     }
     .image{
-        width: 300px;
-        height: 300px;
+        width: 218px;
+        height: 218px;
     }
     .block__h{
         position: absolute;
-        top: 315px;
+        top: 235px;
         letter-spacing: 0.2px;
         font-size: 18px;
         color: #666d89;
     }
     .block__text{
         position: absolute;
-        top: 345px;
+        top: 270px;
         line-height: 1.95;
         letter-spacing: 0.38px;
         color: #767e9e;
         font-size: 11px;
-        max-width: 300px;    
+        max-width: 220px;    
     }
     .links{
         position: absolute;
-        top: 409px;
+        top: 355px;
     }
     .links a:not(:first-child){
         margin-left: 4px;
@@ -1300,14 +1321,14 @@ a{
         opacity: 0.7;
     }
     .quote{
-        width: 1020px;
+        max-width: 768px;
         height: 660px;
         
     }
     .main__qoute{
         position: relative;
-        width: 1020px;
-        height: 648px;
+        width: 100%;
+        height: 631px;
         background-color: #f06c64;
         font-size: 10px;
         border-bottom: 6px solid #ea676b;
@@ -1337,11 +1358,11 @@ a{
     }
     .contacts__form{
         display: inline-block;
-        width: 620px;
+        width: 442px;
     }
     .contact__info{ 
         display: inline-block;
-        width: 300px;
+        width: 225px;
         padding-left: 20px;
     }
     
@@ -1400,15 +1421,15 @@ a{
     }
     .contact1{
         position: absolute;
-        top: 140px;  
+        top: 170px;  
     }
     .contact2{
         position: absolute;
-        top: 161px;  
+        top: 191px;  
     }
     .contact3{
         position: absolute;
-        top: 183px;  
+        top: 213px;  
     }
     a{
         text-decoration: none;
@@ -1465,23 +1486,26 @@ a{
         position: relative;
         left: -4px;
     }
-    .mobile__nav{
+    .mobile__menu{
         display: none;
     }
 }
-@media (min-width: 375px) and (max-width: 768px){
+@media (min-width: 375px) and (max-width: 767px){
     *{
         justify-content: center;
         margin: auto;
+        max-width: 375px;
     }
     .mobile__menu{
         display: inline-block;
     }
     .fas{
+        transition: 0.2s;
         margin-top: 23px;
         margin-left: 28px;
     }
     .fa-bars{
+        transition: 0.2s;
         color: white;
     }
     
@@ -1502,7 +1526,7 @@ a{
     }
     .header__text{
         display: inline-block;
-        margin-left: 367px;  
+        margin-left: 65px;  
         font-weight: 100;
         font-size: 32px;
         text-transform: uppercase;
@@ -1525,99 +1549,104 @@ a{
     .header__small{
         position: relative;
         width: 100%;
+        height: 70px;
         background-color: #2d303a;
         display: inline-block;
-        transition: 0.4s;  
-        opacity: 0.8;
+        transition: 0.4s;
+        border-bottom: 6px solid #323746;
+        opacity: 0.8s;
     }
     .header__text-small{
-        position: absolute;
-        top: 0;
-        left: 100px;
+        top: -10px;
         display: inline-block;
-        margin-left: 40px;  
+        margin-left: 125px;  
         font-weight: 100;
-        font-size: 24.5px;
+        font-size: 32px;
         text-transform: uppercase;
         color: #ffffff;
-        line-height: 102px;
-        transition: 0.4s;
-        
+        line-height: 100px;
+        transition: 0.1s;
     }
     /* slider */
     .slider{
+        box-sizing: border-box;
         padding-top: 95px;
-        width: 1020px;
-        height: 444px;
+        max-width: 375px;
+        height: 320px;
         position: relative; 
         border-bottom: 6px solid #ea676b;
     }
     .slider__main{
         position: relative;
-        height: 444px;
+        height: 220px;
     }
     .phone{
         position: relative;
         display: inline-block;
-        width: 180px;
-        height: 364px;
+        width: 80px;
+        height: 160px;
     }
     .phone1{
-        top: 40px;
-        left: 30px;
+        top: 30px;
+        left: 55px;
         background-repeat: no-repeat;
         background-position: 0 0;
         background-image: url(assets/iphone.png), url(assets/phone_shadow.png);
-        background-size: 180px 364px;
+        background-size: 80px 160px;
     }
     .phone2{
         top: 0px;
         right: 102px;
         background-repeat: no-repeat;
         background: url(assets/phone_shado.png);
-        background-size: 364px 180px; 
+        background-size: 160px 80px; 
         transform: rotate(90deg) scale(-1, 1);
         
     }
     .phone2::before{
         content: "";
         position: absolute;
-        top: -140px;
-        left: -52px;
-        width: 180px;
-        height: 364px;
+        top: 80px;
+        left: -32px;
+        width: 80px;
+        height: 160px;
         background: url(assets/iphone.png) 0 0 no-repeat; 
-        background-size: 180px 364px;
+        background-size: 80px 160px;
         transform: scale(-1, 1);
     }
     .phone1_background{
         content: "";
         position: absolute;
-        top: 52px;
-        left: 12px;
-        width: 157px;
-        height: 263px;
+        top: 23px;
+        left: 5px;
+        width: 70px;
+        height: 116px;
         background: url(assets/back1.png) -14px -135px no-repeat; 
     }
     .phone2_background{
         content: "";
         position: absolute;
-        top: -34px;
-        left: -95px;
-        width: 265px;
-        height: 156px;
+        top: 126px;
+        left: -50px;
+        width: 117px;
+        height: 70px;
         background: url(assets/back2.png) -124px -118px no-repeat; 
         transform: rotate(90deg) scale(-1, 1);
     }
     
     .slide1{
+        box-sizing: border-box;
         position: relative;
-        width: 768;
-        padding: 0 100px;
-        height: 445px;
+        max-width: 375px;
+        height: 220px;
         left: 0;
         background-color: #f06c64;
         
+    }
+    .slide{
+        box-sizing: border-box;
+        max-width: 375px;
+        padding: 0;
     }
     .slide_hide{
         display: none; 
@@ -1625,10 +1654,10 @@ a{
     
     /*ВТОРОЙ СЛАЙД*/
     .slide2 {
+        box-sizing: border-box;
         left: 0;
-        width: 768;
-        padding: 0 100px;
-        height: 445px;
+        max-width: 375px;
+        height: 220px;
         background-color: #648BF0;
         transition: 0.5s;
     }
@@ -1636,13 +1665,13 @@ a{
     .slide2 > .phone {
         position: relative;
         display: inline-block;
-        width: 180px;
-        height: 364px;
-        top: 40px;
+        width: 80px;
+        height: 160px;
+        top: 32px;
         left: 12px;
         background-repeat: no-repeat;
         background-position: 0 0;
-        background-size: 180px 364px;
+        background-size: 80px 160px;
         background-image: url(assets/iphone.png), url(assets/phone_shadow.png); 
     }
     .slide2 > .rightPhone {
@@ -1658,32 +1687,32 @@ a{
         /* background-size: 180px 180px; */
         content: "";
         position: absolute;
-        top: 55px;
-        left: 14px;
-        width: 154px;
-        height: 262px;
+        top: 22px;
+        left: 5px;
+        width: 70px;
+        height: 116px;
         background: url(assets/back1.png) -14px -135px no-repeat; 
     }
     
     .slide2 > .centeredPhone {
-        left: -44px;
+        left: -10px;
     }
     
     .slide2 > .rightPhone {
-        left: 274px;
+        left: 133px;
     }
     
     .slide2 > .leftPhone {
-        left: 187px;
+        left: 96px;
     }
     
     .slide2 > .centeredPhone .phoneCenter {
         content: "";
         position: absolute;
-        top: 52px;
-        left: 12px;
-        width: 157px;
-        height: 263px;
+        top: 23px;
+        left: 5px;
+        width: 70px;
+        height: 116px;
         /* background-size: 180px 180px; */
         background: url(assets/back3.png) 0px 0px no-repeat; 
     }
@@ -1693,47 +1722,49 @@ a{
     }
 
     .chev{
+        width: 10px;
         position: absolute;
-        top: 222px;
-        left: 42px;  
+        top: 102px;
+        left: 15px;  
         cursor: pointer;
     }
     .chev2{
+        width: 10px;
         position: absolute;
-        right: 42px;
-        top: 222px;
+        right: 15px;
+        top: 106px;
         cursor: pointer;
     } 
 
     .services{
-        width: 1020px;
-        height: 1082px;
+        width: 100%;
+        height: 1032px;
         border-bottom: solid 6px #ffffff;
     }
     .services__text{
         width: 100%;
-        height: 220px;
+        height: 240px;
         position: relative;
         background-color: #f2f2f2;
     }
     .services__h{
         position: absolute;  
         color: #666d89;
-        font-size: 50px;
+        font-size: 32px;
         font-weight: 700;
         left: 40px;
         top: 20px;    
     }
     .services__p{
-        width: 940px;
+        width: 80%;
         position: absolute;   
         color: #767e9e; 
-        font-size: 28px;
+        font-size: 20px;
         line-height: 30px;
         left: 40px;
-        top: 90px; 
+        top: 65px; 
         letter-spacing: 0.7px;
-        text-align: justify;    
+            
     }
     .services__items{
         position: relative;
@@ -1749,88 +1780,88 @@ a{
         
     }
     .design{
-        width: 100%;   
+        width: 300px;   
         margin: 0px;
+        top: 5%;
         position: absolute;  
-        left: 30%;
+        
     }
     
     .ideas{
-        width: 100%;    
+        width: 300px;    
         margin: 0px;
         position: absolute;
-        left: 30%;
-        top: 18%;
+        
+        top: 20%;
     }
     .answer{
-        width: 100%;; 
+        width: 300px;  
         margin: 0px;
         position: absolute;
-        left: 30%;
-        top: 36%;
+        
+        top: 35%;
     }
     .phone_ser{
-        width: 100%;
+        width: 300px; 
         margin: 0px;
         position: absolute; 
-        left: 30%;
-        top: 54%;
+       
+        top: 50%;
     }
     .bubble{
-        width: 100%;
+        width: 300px; 
         margin: 0px;
         position: absolute;
-        left: 30%;
-        top: 70%;
+        
+        top: 65%;
     }
     .star{
-        width: 100%; 
+        width: 300px;  
         margin: 0px;
         position: absolute;
-        left: 30%;
-        top: 86%;
+        top: 80%;
     }
     .services__items img{
         display: inline-block;
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
     
     .items__text{  
         color: #767e9e;
-        font-size: 16px;
+        font-size: 14px;
         position: absolute;
         left: 80px;
         top: 28px;
-        width: 320px;
+        width: 210px;
         line-height: 21.56px;
     }
     
     .items__h{
         position: absolute;
         color: #666d89;
-        font-size: 24px;
+        font-size: 20px;
         left: 80px;
         top: -4px;
     }
 
     /* portfoilio */
     .portfolio__container{
-        height: 1100px;
-        width: 1020px;
+        height: 764px;
+        max-width: 375px;
         position: relative;
         border-bottom: 6px solid #323746;
     }
     .portfolio{
-        height: 1100px;
-        width: 1020px;
+        height: 764px;
+        width: 100%;
         background-color: #2d303a;
         position: relative;
     }
     .portfolio__text{
         position: absolute;
         left: 41px;
-        top: 60px;
+        top: 20px;
         font-size: 30px;
         color: #666d89;
         letter-spacing: 0.5px;
@@ -1843,9 +1874,10 @@ a{
     .p__text{
         position: absolute;
         left: 41px;
-        top: 119px;
+        top: 65px;
+        width: 320px;
         letter-spacing: 0.18px;
-        font-size: 26px;
+        font-size: 20px;
         color: #666d89;    
     }
     button{
@@ -1862,7 +1894,7 @@ a{
     }
     .button__all{
         position: absolute;
-        top: 40px;
+        top: 0px;
         left: 0px;
         height: 22px;
         width: 30px;
@@ -1870,7 +1902,7 @@ a{
     .button__web-design{
         letter-spacing: 0.25px;
         position: absolute;
-        top: 40px;
+        top: 0px;
         left: 40px;
         height: 22px;
         width: 78px;
@@ -1878,7 +1910,7 @@ a{
     .button__graphic-design{
         position: absolute;
         letter-spacing: 0.21px;
-        top: 40px;
+        top: 0px;
         left: 127px;
         height: 22px;
         width: 93px;
@@ -1886,7 +1918,7 @@ a{
     .button__artwork{
         letter-spacing: 1.1px;
         position: absolute;
-        top: 40px;
+        top: 0px;
         left: 230px;
         height: 22px;
         width: 57px;
@@ -1901,18 +1933,22 @@ a{
         left: 41px;
     }
     .images{
+        overflow: hidden;
         position: absolute;
-        top: 236px;
-        left: 100px;
+        top: 195px;
+        left: 5px;
         max-height: 620px;
         display: grid;
-        grid-template-columns: 33% 33% 33%;
-        grid-column-gap: 30px;
-        grid-row-gap: 17px;
+        grid-template-columns: 50% 50%;
+        grid-column-gap: 5px;
+        grid-row-gap: 0px;
         padding-left: 38px;
-        
+        grid-template-rows: 23.2% 23.2% 23.2% 23.2%;
     }
-    
+    .images img{
+        width: 145px;
+        height: 120px;
+    }
     .images > div{
         visibility: initial;
     }
@@ -1928,28 +1964,28 @@ a{
         outline-offset: -5px;
     }
     .about_us{
-        height: 728px;
+        height: 1744px;
         width: 1020px;
         border-bottom: 6px solid #ffffff;   
     }
     .about__main{
-        height: 728px;
+        height: 1744px;
         background-color: #f2f2f2;
         position: relative;
     }
     h2{
         position: absolute;
         left: 41px;
-        top: 59px;
+        top: 20px;
         letter-spacing: 0.5px;
         font-size: 30px;
         color: #666d89;    
     }
     .about__text{
+        width: 310px;
         position: absolute;
-        
         left: 41px;
-        top: 115px;
+        top: 65px;
         line-height: 1.7;
         letter-spacing: 0.29px;
         font-size: 17px;
@@ -1957,16 +1993,26 @@ a{
     }
     .block{
         position: absolute;
-        top: 218px;
+        top: 288px;
         display: grid;
-        grid-template-columns: 300px 300px 300px;
+        grid-template-columns: 80%;
         grid-column-gap: 20px;
-        grid-row-gap: 17px;
-        padding-left: 40px;
+        grid-row-gap: 100px;
+        padding-left: 10px;
+    }
+    .center{
+        position: absolute;
+        top: 480px;
+        left: 40px;
+    }
+    .right{
+        position: absolute;
+        top: 960px;
+        left: 40px;  
     }
     .image{
-        width: 300px;
-        height: 300px;
+        width: 304px;
+        height: 304px;
     }
     .block__h{
         position: absolute;
@@ -1981,12 +2027,12 @@ a{
         line-height: 1.95;
         letter-spacing: 0.38px;
         color: #767e9e;
-        font-size: 11px;
+        font-size: 14px;
         max-width: 300px;    
     }
     .links{
         position: absolute;
-        top: 409px;
+        top: 430px;
     }
     .links a:not(:first-child){
         margin-left: 4px;
@@ -1995,14 +2041,13 @@ a{
         opacity: 0.7;
     }
     .quote{
-        width: 1020px;
-        height: 660px;
-        
+        width: 100%;
+        height: 969px;
     }
     .main__qoute{
         position: relative;
-        width: 1020px;
-        height: 648px;
+        width: 100%;
+        height: 969px;
         background-color: #f06c64;
         font-size: 10px;
         border-bottom: 6px solid #ea676b;
@@ -2010,7 +2055,7 @@ a{
     .h__text{
         font-size: 30px;
         position: absolute;
-        top: 59px;
+        top: 20px;
         letter-spacing: 0.2px;
         left: 40px;
         color: #f0d8d9;
@@ -2018,26 +2063,31 @@ a{
     .qoute__text{
         font-size: 1rem;
         position: absolute;
-        top: 113px;
+        top: 60px;
         line-height: 1.9rem;
         letter-spacing: 0.05rem;
         left: 40px;
         color: #f0d8d9;
+        font-style: 12px;
         font-weight: 100;
+        width: 300px;
     }
     .contacts{
         position: absolute;
-        top: 217px;
+        top: 317px;
         left: 40px;
     }
     .contacts__form{
         display: inline-block;
-        width: 620px;
+        width: 300px;
     }
     .contact__info{ 
         display: inline-block;
         width: 300px;
-        padding-left: 20px;
+        height: 300px;
+        position: absolute;
+        top: 430px;
+        left: -20px;
     }
     
     .contacts__field{
@@ -2058,6 +2108,7 @@ a{
         height: 202px;   
     }
     .submit__button{
+        width: 300px;
         display: inline-block;
         color: #f0d8d9;
         text-decoration: none;
@@ -2138,26 +2189,15 @@ a{
         background-color: #2d303a;
     }
     .footer__text{
+        display: none;
         color: rgb(59, 59, 59);
         line-height: 76px;
         padding-left: 40px;
         font-size: 12px;   
     }
     .footer__links{
-        float: right;
-        padding-right: 40px;
-        padding-top: 22px;
-    }
-    .facebook3{
-        position: relative;
-        left: -12px;
-    }
-    .google3{
-        position: relative;
-        left: -8px;
-    }
-    .twitter3{
-        position: relative;
-        left: -4px;
+        justify-content: center;
+        padding-top: 6%;
+        padding-right: 30%;
     }
 }
