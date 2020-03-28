@@ -41,27 +41,11 @@ h5.onclick = function(event){
     h5.classList.add("header__item_active")
 }
 
-// Подсветка текущего раздела
-
-// Стиль
-
-// const H1 = document.querySelector("h1")
-// const NAV = document.querySelector(".header__nav")
-
-// function onChangeHeader() {
-//   if (window.pageYOffset > 10) {
-//     H1.classList.add("header__text-small")
-//     NAV.classList.add("header__nav-small")
-//   } else {
-//     H1.classList.remove("header__text-small")
-//     NAV.classList.remove("header__nav-small")
-//   }
-// }
 
 const header = document.getElementById("header"),
 headerText = document.querySelector(".header__text"),
-headerNav = document.querySelector(".header__nav"),
-headerLine = document.querySelector(".header__line");
+headerNav = document.querySelector(".header__nav");
+
 
 window.addEventListener("scroll", changeHeader)
     
@@ -70,14 +54,12 @@ function changeHeader(){
     header.classList.add("header__small")
     headerText.classList.add("header__text-small")
     headerNav.classList.add("header__nav-small")
-    headerLine.classList.remove("header__line")
     
   }
   else{
     header.classList.remove("header__small")
     headerText.classList.remove("header__text-small")
-    headerNav.classList.remove("header__nav-small")
-    headerLine.classList.add("header__line")  
+    headerNav.classList.remove("header__nav-small")  
   }
 }
 
@@ -333,3 +315,97 @@ function SubmitForm(e) {
   })
   newModal.open()
 }
+
+//mobile__menu
+
+let m1 = document.getElementById("menu1");
+let m2 = document.getElementById("menu2");
+let m3 = document.getElementById("menu3");
+let m4 = document.getElementById("menu4");
+let m5 = document.getElementById("menu5");
+
+m1.onclick = function(event){
+  m1.classList.add("menu__colored")
+  m2.classList.remove("menu__colored")
+  m3.classList.remove("menu__colored")
+  m4.classList.remove("menu__colored")
+  m5.classList.remove("menu__colored")
+  menu.classList.add("closed");
+}
+m2.onclick = function(event){
+  m1.classList.remove("menu__colored")
+  m2.classList.add("menu__colored")
+  m3.classList.remove("menu__colored")
+  m4.classList.remove("menu__colored")
+  m5.classList.remove("menu__colored")
+  menu.classList.add("closed");
+}
+m3.onclick = function(event){
+  m1.classList.remove("menu__colored")
+  m2.classList.remove("menu__colored")
+  m3.classList.add("menu__colored")
+  m4.classList.remove("menu__colored")
+  m5.classList.remove("menu__colored")
+  menu.classList.add("closed");
+}
+m4.onclick = function(event){
+  m1.classList.remove("menu__colored")
+  m2.classList.remove("menu__colored")
+  m3.classList.remove("menu__colored")
+  m4.classList.add("menu__colored")
+  m5.classList.remove("menu__colored")
+  menu.classList.add("closed");
+}
+m5.onclick = function(event){
+  m1.classList.remove("menu__colored")
+  m2.classList.remove("menu__colored")
+  m3.classList.remove("menu__colored")
+  m4.classList.remove("menu__colored")
+  m5.classList.add("menu__colored")
+  menu.classList.add("closed");
+}
+
+let mobileMenu = document.querySelector(".mobile__menu");
+let menu = document.querySelector(".menu");
+let mobileMenu2 = document.querySelector(".mobile__menu2");
+let menuNav = document.querySelector(".menu__nav");
+mobileMenu.addEventListener('click', ()=>{
+  menu.classList.remove("closed");
+});
+mobileMenu2.addEventListener('click', ()=>{
+  menu.classList.add("closed");
+});
+
+
+if( window.innerWidth <= 768 ){
+  changeLinks(0);
+  window.addEventListener("scroll", changeLinks)
+
+  function changeLinks(){
+
+    const headerSmallHeight = 89,
+    servicesPos = document.getElementById("services").offsetTop - headerSmallHeight,
+    portfolioPos = document.getElementById("portfolio").offsetTop - headerSmallHeight,
+    aboutPos = document.getElementById("about").offsetTop - headerSmallHeight,
+    contactPos = document.getElementById("contact").offsetTop - headerSmallHeight;
+  
+    let currentPos = window.pageYOffset;
+
+
+    if      (currentPos < servicesPos) changeLinksActive(0)
+    else if (currentPos >= servicesPos && currentPos < portfolioPos) changeLinksActive(1)
+    else if (currentPos >= portfolioPos && currentPos < aboutPos) changeLinksActive(2)
+    else if (currentPos >= aboutPos && currentPos < contactPos) changeLinksActive(3)
+    if (currentPos + 180 >= contactPos) changeLinksActive(4)
+  }
+
+  function changeLinksActive(n){
+    const linksMenu = menuNav.querySelectorAll(".menu__item")
+    linksMenu.forEach(e =>{
+      e.classList.remove("menu__item-active");
+    })
+    linksMenu[n].classList.add("menu__item-active");
+  }  
+} else {
+
+} 
