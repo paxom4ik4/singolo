@@ -325,43 +325,18 @@ let m4 = document.getElementById("menu4");
 let m5 = document.getElementById("menu5");
 
 m1.onclick = function(event){
-  m1.classList.add("menu__colored")
-  m2.classList.remove("menu__colored")
-  m3.classList.remove("menu__colored")
-  m4.classList.remove("menu__colored")
-  m5.classList.remove("menu__colored")
   menu.classList.add("closed");
 }
 m2.onclick = function(event){
-  m1.classList.remove("menu__colored")
-  m2.classList.add("menu__colored")
-  m3.classList.remove("menu__colored")
-  m4.classList.remove("menu__colored")
-  m5.classList.remove("menu__colored")
   menu.classList.add("closed");
 }
 m3.onclick = function(event){
-  m1.classList.remove("menu__colored")
-  m2.classList.remove("menu__colored")
-  m3.classList.add("menu__colored")
-  m4.classList.remove("menu__colored")
-  m5.classList.remove("menu__colored")
   menu.classList.add("closed");
 }
 m4.onclick = function(event){
-  m1.classList.remove("menu__colored")
-  m2.classList.remove("menu__colored")
-  m3.classList.remove("menu__colored")
-  m4.classList.add("menu__colored")
-  m5.classList.remove("menu__colored")
   menu.classList.add("closed");
 }
 m5.onclick = function(event){
-  m1.classList.remove("menu__colored")
-  m2.classList.remove("menu__colored")
-  m3.classList.remove("menu__colored")
-  m4.classList.remove("menu__colored")
-  m5.classList.add("menu__colored")
   menu.classList.add("closed");
 }
 
